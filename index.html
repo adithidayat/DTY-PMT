@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>DTY-Politeknik Enjinering Indorama</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="gambar/Logo_PEI[1].png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+
+
+<style>
+  .btn-orange {
+    background-color: #fd7e14 !important;
+    color: #fff !important;
+    border: 1px solid #fd7e14 !important;
+  }
+
+    .text-orange {
+   
+    color: #fd7e14 !important;
+   
+  }
+  .btn-orange:hover {
+    background-color: #e8590c !important;
+    border-color: #e8590c !important;
+    color: #fff !important;
+  }
+
+.header .navmenu a {
+  color: #363636 !important;  /* Putih saat normal */
+  transition: color 0.3s ease;
+}
+
+/* 2. Warna saat hover */
+.header .navmenu a:hover,
+.header .navmenu li:hover > a,
+.header .navmenu .active {
+  color: #fd7e14 !important;  /* Oranye saat hover atau aktif */
+}
+
+.stat-item {
+  color: #fd7e14  !important;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.stat-item .stat-icon i {
+  color: #fd7e14  !important;
+  transition: color 0.3s ease;
+}
+.stat-icon  {
+  background-color: #fae5d3  !important;
+ 
+}
+
+
+
+.stat-item:hover .stat-icon i {
+  color: #fd7e14  !important;
+  
+}
+.stat-item:hover .stat-icon,.info-box {
+  background-color: #e8590c !important;
+}
+.stat-item:hover .stat-icon i {
+  color: #fff !important; 
+}
+
+
+
+i.bi {
+  color: #fd7e14 !important;
+}
+.feature-icon.flex-shrink-0,.icon.flex-shrink-0,.icon-box,.scroll-top {
+  background-color: #fae5d3 !important;
+}
+.tab-pane img.img-fluid {
+  max-height: 300px;
+  object-fit: contain;
+  width: 100%;
+}
+h2::after {
+  background-color: #fd7e14 !important;
+}
+
+h3::after {
+  background-color: #fd7e14 !important;
+}
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active.show {
+  background-color: #fd7e14 !important;
+  color: #fff !important;
+  border-color: #fd7e14 #fd7e14 #fff !important;
+}
+
+#quizOverlay {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #quizPopup {
+      background: white;
+      width: 400px;
+      max-width: 90vw;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      animation: popupIn 0.4s ease forwards;
+    }
+    @keyframes popupIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    #quizPopup h2 {
+      margin-bottom: 15px;
+      color: #ff6600;
+    }
+    #questionText {
+      font-weight: bold;
+      margin-bottom: 15px;
+      min-height: 60px;
+    }
+    .options {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      text-align: left;
+    }
+    .options li {
+      background: #eee;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+      user-select: none;
+    }
+    .options li:hover {
+      background: #ffd6a3;
+    }
+    .options li.correct {
+      background-color: #a5d6a7 !important;
+      color: #255625;
+      cursor: default;
+    }
+    .options li.wrong {
+      background-color: #ef9a9a !important;
+      color: #5c0000;
+      cursor: default;
+    }
+    #nextBtn {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      display: none;
+      transition: background 0.3s;
+    }
+    #nextBtn:hover {
+      background-color: #cc5200;
+    }
+    #closeBtn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: #666;
+    }
+    #resultText {
+      font-size: 18px;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+      white-space: pre-line;
+    }
+</style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">DTY-Politeknik Enjinering Indorama</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Beranda</a></li>
+          <li><a href="#about">Tentang kami</a></li>
+          <li><a href="#features">Keunggulan</a></li>
+          <li><a href="#services">Alur Produksi</a></li>
+          <li><a href="#contact">kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted btn-orange" href="index.html#about">Ayo Mulai</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="hero-content " data-aos="fade-up" data-aos-delay="200">
+              <div class="company-badge mb-4 btn-orange">
+                <i class="bi bi-gear-fill me-2"></i>
+                Menyatukan Dunia Industri dan Pendidikan Sejak 2013
+              </div>
+
+              <h1 class="mb-4">
+                Dari Benang ke Ilmu<br>
+                 – Kolaborasi Nyata <br>
+                <span class="accent-text text-orange">Dunia Industri dan Edukasi.</span>
+              </h1>
+
+              
+              <div class="hero-buttons">
+                <a href="#about" class="btn btn-orange me-0 me-sm-2 mx-1">Ayo Mulai</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
+              <img src="gambar/dty1.png" alt="Hero Image" class="img-fluid">
+
+              <div class="customers-badge">
+                <div class="customer-avatars">
+                  <img src="gambar/dty1.png" alt="Customer 1" class="avatar">
+                  <img src="gambar/dty2.jpeg" alt="Customer 2" class="avatar">
+                  <img src="gambar/dty3.jpeg" alt="Customer 3" class="avatar">
+                  <img src="gambar/dty6.jpeg" alt="Customer 4" class="avatar">
+                  <img src="gambar/poy.jpeg" alt="Customer 5" class="avatar">
+                  <span class="avatar more">12+</span>
+                </div>
+                <p class="mb-0 mt-2">Dipercaya oleh banyak pelanggan industri tekstil di dalam dan luar negeri, dari benang POY hingga DTY berkualitas tinggi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       <div class="row stats-row gy-4 mt-5" data-aos="fade-up" data-aos-delay="500">
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="bi bi-briefcase"></i>
+            </div>
+            <div class="stat-content">
+              <h4>melayani berbagai Pelanggan</h4>
+              <p class="mb-0">Layanan untuk pasar domestik dan ekspor global.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="bi bi-graph-up"></i>
+            </div>
+            <div class="stat-content">
+              <h4>3 Ton Output Harian</h4>
+              <p class="mb-0">Produksi kapas dan benang DTY dengan mesin Murata.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="bi bi-award"></i>
+            </div>
+            <div class="stat-content">
+              <h4>Sejak 2013</h4>
+              <p class="mb-0">Kerja sama berkelanjutan dengan Politeknik Enjinering Indorama (PEI).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+
+    </section><!-- /Hero Section -->
+        <div id="quizOverlay">
+          <div id="quizPopup" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+            <button id="closeBtn" aria-label="Tutup kuis">&times;</button>
+            <h2 id="quizTitle">Kuis DTY</h2>
+            <div id="questionText"></div>
+            <ul class="options" id="optionsList"></ul>
+            <button id="nextBtn" aria-label="Soal berikutnya">Lanjut</button>
+            <div id="resultText"></div>
+          </div>
+        </div>
+
+        <audio id="correctSound" src="audio/benar.mp3" preload="auto"></audio>
+        <audio id="wrongSound" src="audio/salah.mp3" preload="auto"></audio>
+    <!-- About Section -->
+    <section id="about" class="about section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4 align-items-center justify-content-between">
+
+      
+      <div class="col-xl-5" data-aos="fade-up" data-aos-delay="200">
+        <span class="about-meta text-orange">TENTANG KAMI</span>
+        <h2 class="about-title">Unit DTY: Kolaborasi Nyata Dunia Pendidikan dan Industri</h2>
+        <p class="about-description">
+          Unit produksi Draw Texturized Yarn (DTY) ini dibangun bersamaan dengan pendirian Politeknik Enjinering Indorama (PEI) pada tahun 2013 sebagai wujud nyata sinergi antara dunia pendidikan dan dunia industri. Tujuan utamanya adalah memberikan pengalaman langsung kepada mahasiswa dalam mengenal alur proses industri tekstil modern — mulai dari pengoperasian mesin, pengendalian kualitas benang, hingga standar kerja industri global.
+        </p>
+
+        <div class="row feature-list-wrapper">
+          <div class="col-md-6">
+            <ul class="feature-list">
+              <li><i class="bi bi-check-circle-fill"></i> Dibangun bersama PEI sejak 2013</li>
+              <li><i class="bi bi-check-circle-fill"></i> Mesin produksi asli dari Jepang (Murata)</li>
+              <li><i class="bi bi-check-circle-fill"></i> Proses real-time di industri tekstil</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="feature-list">
+              <li><i class="bi bi-check-circle-fill"></i> Pelatihan K3 dan pengawasan produksi</li>
+              <li><i class="bi bi-check-circle-fill"></i> Mahasiswa terlibat langsung di lapangan</li>
+              <li><i class="bi bi-check-circle-fill"></i> Simulasi proses grading & quality control</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-wrapper">
+          <div class="row gy-4">
+           
+            <div class="col-lg-7">
+              <div class="contact-info d-flex align-items-center gap-2">
+                <i class="bi bi-telephone-fill"></i>
+                <div>
+                  <p class="contact-label">Informasi lebih lanjut</p>
+                  <p class="contact-number">+62 812 3456 7890</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="image-wrapper">
+          <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
+            <img src="gambar/POY.jpeg" alt="Produksi Benang DTY" class="img-fluid main-image rounded-4">
+            <img src="gambar/mursata.jpg" alt="Mesin Murata DTY" class="img-fluid small-image rounded-4">
+          </div>
+          <div class="experience-badge floating btn-orange">
+            <h3>10+ <span>Tahun</span></h3>
+            <p>Pengalaman memproduksi benang tekstur berkualitas</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- /About Section -->
+
+   <!-- Features Section -->
+<section id="features" class="features section">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Keunggulan Unit DTY</h2>
+    <p>Unit DTY dirancang untuk mendukung mahasiswa dalam memahami proses nyata industri tekstil modern.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
+        <li class="nav-item">
+          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+            <h4>Proses Produksi</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+            <h4>Peran Mahasiswa</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+            <h4>Pengujian & QC</h4>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+      <!-- Tab 1: Proses Produksi -->
+      <div class="tab-pane fade active show" id="features-tab-1">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center">
+            <h3>Proses Ringkas & Efisien</h3>
+            <p class="fst-italic">
+              DTY hanya membutuhkan satu kali proses utama: memproses benang POY menjadi benang tekstur siap jual.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> Menggunakan mesin Murata dari Jepang.</li>
+              <li><i class="bi bi-check2-all"></i> Output harian rata-rata mencapai 3 ton per hari.</li>
+              <li><i class="bi bi-check2-all"></i> Proses 24 jam nonstop, kecuali saat maintenance.</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img src="gambar/mesin.jpg" alt="Proses DTY" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Peran Mahasiswa -->
+      <div class="tab-pane fade" id="features-tab-2">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center">
+            <h3>Pembelajaran Langsung di Industri</h3>
+            <p class="fst-italic">Mahasiswa PEI mendapatkan kesempatan langsung mengamati dan berpartisipasi dalam kegiatan industri.</p>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> Pemahaman langsung proses produksi tekstil.</li>
+              <li><i class="bi bi-check2-all"></i> Pelatihan Keselamatan & Kesehatan Kerja (K3).</li>
+              <li><i class="bi bi-check2-all"></i> Pengenalan sistem mesin otomatisasi industri.</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img src="gambar/mahasiswa.jpg" alt="Mahasiswa di DTY" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Pengujian & QC -->
+      <div class="tab-pane fade" id="features-tab-3">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center">
+            <h3>Kontrol Kualitas Produk</h3>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> Benang diuji dengan proses knitting & pewarnaan.</li>
+              <li><i class="bi bi-check2-all"></i> Grading benang: AX, A, B, dan C berdasarkan berat dan kualitas.</li>
+              <li><i class="bi bi-check2-all"></i> Hasil yang tidak sesuai → diturunkan grade atau tidak didistribusikan.</li>
+            </ul>
+            <p class="fst-italic">
+              Mahasiswa belajar langsung melakukan uji visual dan tekstur terhadap hasil produksi.
+            </p>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img src="gambar/kniting.jpg" alt="Quality Control DTY" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Features 2 Section -->
+    <section id="features-2" class="features-2 section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="container section-title" data-aos="fade-up">
+            <h2>Keselamatan, Kesehatan, dan Lingkungan (K3L)</h2>
+            
+          </div><!-- End Section Title -->
+          <div class="row align-items-center">
+
+            <!-- K3L - Kanan -->
+            <div class="col-lg-4">
+              <div class="feature-item text-end mb-5" data-aos="fade-right" data-aos-delay="200">
+                <div class="d-flex align-items-center justify-content-end gap-4">
+                  <div class="feature-content">
+                    <h3>Pelatihan Keselamatan</h3>
+                    <p>Seluruh karyawan mengikuti pelatihan K3 secara rutin guna memahami standar keselamatan kerja dan prosedur darurat.</p>
+                  </div>
+                  <div class="feature-icon flex-shrink-0">
+                    <i class="bi bi-shield-check"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feature-item text-end mb-5" data-aos="fade-right" data-aos-delay="300">
+                <div class="d-flex align-items-center justify-content-end gap-4">
+                  <div class="feature-content">
+                    <h3>Alat Pelindung Diri (APD)</h3>
+                    <p>Dukungan APD lengkap seperti sepatu safety, helm, dan sarung tangan untuk seluruh aktivitas produksi di area pabrik.</p>
+                  </div>
+                  <div class="feature-icon flex-shrink-0">
+                    <i class="bi bi-exclamation-triangle"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feature-item text-end" data-aos="fade-right" data-aos-delay="400">
+                <div class="d-flex align-items-center justify-content-end gap-4">
+                  <div class="feature-content">
+                    <h3>Simulasi Tanggap Darurat</h3>
+                    <p>Prosedur evakuasi dijalankan melalui latihan berkala untuk meningkatkan kesiapsiagaan semua pihak terhadap situasi darurat.</p>
+                  </div>
+                  <div class="feature-icon flex-shrink-0">
+                    <i class="bi bi-exclamation-triangle"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gambar Tengah -->
+            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+              <div class="phone-mockup text-center">
+                <img src="gambar/k3.jpg" alt="Keselamatan & Lingkungan" class="img-fluid">
+              </div>
+            </div>
+
+            <!-- Peran Mahasiswa - Kiri -->
+            <div class="col-lg-4">
+              <div class="feature-item mb-5" data-aos="fade-left" data-aos-delay="200">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="feature-icon flex-shrink-0">
+                    <i class="bi bi-person-video3"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h3>Pengalaman Industri Nyata</h3>
+                    <p>Mahasiswa dapat langsung mengamati dan terlibat dalam kegiatan industri sebagai bekal pengalaman profesional.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feature-item mb-5" data-aos="fade-left" data-aos-delay="300">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="feature-icon flex-shrink-0">
+                    <i class="bi bi-diagram-3"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h3>Pengenalan Proses Produksi</h3>
+                    <p>Pemahaman menyeluruh tentang alur produksi benang, dari bahan mentah hingga pengujian mutu dan distribusi.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feature-item" data-aos="fade-left" data-aos-delay="400">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="feature-icon flex-shrink-0">
+                    <i class="bi bi-building"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h3>Kunjungan Edukatif</h3>
+                    <p>Fasilitas terbuka bagi institusi pendidikan yang ingin mengadakan kunjungan industri secara langsung dan informatif.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+    
+
+
+   <!-- Services Section -->
+<section id="services" class="services section light-background">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Alur Produksi</h2>
+    <p>Proses produksi benang DTY yang terintegrasi dengan kontrol kualitas ketat untuk hasil terbaik.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row g-4">
+
+      <!-- Tahap 1 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card d-flex">
+          <div class="icon flex-shrink-0">
+            <i class="bi bi-box-seam"></i>
+          </div>
+          <div>
+            <h3>Persiapan Bahan Baku</h3>
+            <p>Memulai dengan benang POY dari proses spinning yang belum diberi tekstur dan warna.</p>
+          </div>
+        </div>
+      </div><!-- End Service Card -->
+
+      <!-- Tahap 2 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card d-flex">
+          <div class="icon flex-shrink-0">
+            <i class="bi bi-hdd-stack"></i>
+          </div>
+          <div>
+            <h3>Pemasangan Gulungan POY</h3>
+            <p>Gulungan POY dipasang pada rak mesin DTY, dengan 12 gulungan aktif dan 12 sebagai cadangan untuk kelancaran produksi.</p>
+          </div>
+        </div>
+      </div><!-- End Service Card -->
+
+      <!-- Tahap 3 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-card d-flex">
+          <div class="icon flex-shrink-0">
+            <i class="bi bi-gear-wide-connected"></i>
+          </div>
+          <div>
+            <h3>Proses Pembentukan Tekstur</h3>
+            <p>Benang melalui proses pemanasan, pemuntiran, pendinginan, dan penggulungan ulang menggunakan mesin Murata.</p>
+          </div>
+        </div>
+      </div><!-- End Service Card -->
+
+      <!-- Tahap 4 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-card d-flex">
+          <div class="icon flex-shrink-0">
+            <i class="bi bi-arrow-repeat"></i>
+          </div>
+          <div>
+            <h3>Penggulungan Ulang Benang</h3>
+            <p>Benang bertekstur digulung kembali secara otomatis menjadi gulungan akhir siap diproses selanjutnya.</p>
+          </div>
+        </div>
+      </div><!-- End Service Card -->
+
+      <!-- Tahap 5 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-card d-flex">
+          <div class="icon flex-shrink-0">
+            <i class="bi bi-check2-circle"></i>
+          </div>
+          <div>
+            <h3>Pengujian Kualitas</h3>
+            <p>Benang diuji dengan proses rajut dan pewarnaan, memastikan warna seragam dan kualitas terjaga.</p>
+          </div>
+        </div>
+      </div><!-- End Service Card -->
+
+      <!-- Tahap 6 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="service-card d-flex">
+          <div class="icon flex-shrink-0">
+            <i class="bi bi-tags"></i>
+          </div>
+          <div>
+            <h3>Klasifikasi Grade</h3>
+            <p>Benang dikelompokkan berdasarkan berat dan mutu menjadi grade AX, A, B, dan C sesuai standar kualitas.</p>
+          </div>
+        </div>
+      </div><!-- End Service Card -->
+
+      <!-- Tahap 7 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="700">
+        <div class="service-card d-flex">
+          <div class="icon flex-shrink-0">
+            <i class="bi bi-box"></i>
+          </div>
+          <div>
+            <h3>Pengemasan</h3>
+            <p>Benang dikemas rapi dalam plastik, dengan hasil produksi satu mesin sekitar 216 gulungan (4 troli).</p>
+          </div>
+        </div>
+      </div><!-- End Service Card -->
+
+      <!-- Tahap 8 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="800">
+        <div class="service-card d-flex">
+          <div class="icon flex-shrink-0">
+            <i class="bi bi-truck"></i>
+          </div>
+          <div>
+            <h3>Distribusi</h3>
+            <p>Produk benang siap dikirim ke gudang Indorama maupun langsung ke pelanggan sesuai kebutuhan pasar.</p>
+          </div>
+        </div>
+      </div><!-- End Service Card -->
+
+    </div>
+  </div>
+</section>
+
+
+<section id="clients" id="pricing" class="clients section">
+        <div class="container text-center" data-aos="fade-up">
+          <h2>Mitra yang Terus Kembali</h2>
+          <p>Hubungan jangka panjang dengan pelanggan menunjukkan kepercayaan mereka atas kinerja dan mutu kami.</p>
+        </div>
+      </section>
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="gambar/wintex.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="gambar/libolon.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="gambar/sritex.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="gambar/panBrother.png" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+
+    
+
+      <section id="clients" class="clients section">
+  <div class="container text-center" data-aos="fade-up">
+    <h2>Coba Pengetahuanmu tentang DTY</h2>
+    <p>Mau tahu seberapa jauh kamu memahami proses dan teknologi DTY? Yuk coba kuis singkat berikut!</p>
+
+    <div class="d-flex justify-content-center mt-4">
+      <button id="startQuizBtn" style="
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 10px;
+        border: none;
+        background: #ff6600;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      ">
+        Mulai Kuis DTY
+      </button>
+    </div>
+  </div>
+</section>
+
+   
+    <!-- Contact Section -->
+   <section id="contact" class="contact section light-background">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Kontak Kami</h2>
+    <p>Hubungi kami untuk informasi lebih lanjut terkait layanan, kolaborasi, atau kunjungan industri.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row g-4 g-lg-5">
+      
+      <!-- Informasi Kontak -->
+      <div class="col-lg-5">
+        <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+          <h3>Informasi Kontak</h3>
+          <p>Kami siap membantu kebutuhan Anda seputar proses DTY, penelitian, maupun pelatihan industri.</p>
+
+          <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+            <div class="content">
+              <h4>Alamat</h4>
+              <p>Kembangkuning, Jatiluhur,</p>
+              <p>Purwakarta, Jawa Barat, Indonesia</p>
+            </div>
+          </div>
+
+          <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-box">
+              <i class="bi bi-telephone"></i>
+            </div>
+            <div class="content">
+              <h4>Telepon</h4>
+              <p>+62 812 3456 7890</p>
+            </div>
+          </div>
+
+          <div class="info-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <i class="bi bi-envelope"></i>
+            </div>
+            <div class="content">
+              <h4>Email</h4>
+              <p>dty.unit@poltektex.ac.id</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulir Kontak -->
+      <div class="col-lg-7">
+        <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
+          <h3>Kirim Pesan</h3>
+          <p>Isi formulir berikut untuk mengirimkan pertanyaan, permintaan kerja sama, atau konsultasi teknis.</p>
+
+          <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+
+              <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Nama Anda" required>
+              </div>
+
+              <div class="col-md-6">
+                <input type="email" class="form-control" name="email" placeholder="Email Anda" required>
+              </div>
+
+              <div class="col-12">
+                <input type="text" class="form-control" name="subject" placeholder="Subjek Pesan" required>
+              </div>
+
+              <div class="col-12">
+                <textarea class="form-control" name="message" rows="6" placeholder="Tulis pesan Anda di sini..." required></textarea>
+              </div>
+
+              <div class="col-12 text-center">
+                <div class="loading">Sedang mengirim...</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Pesan Anda berhasil dikirim. Terima kasih!</div>
+
+                <button type="submit" class="btn btn-orange">Kirim Pesan</button>
+              </div>
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section><!-- /Contact Section -->
+
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <!-- About / Contact -->
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">DTY-Politeknik Enjinering Indorama</span>
+        </a>
+        <div class="footer-contact pt-3">
+           <p>Kembangkuning, Jatiluhur,</p>
+              <p>Purwakarta, Jawa Barat, Indonesia</p>
+          <p class="mt-3"><strong>Telepon:</strong> <span>+62 812 3456 7890</span></p>
+          <p><strong>Email:</strong> <span>dty.unit@poltektex.ac.id</span></p>
+        </div>
+        <div class="social-links d-flex mt-4">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- Navigasi -->
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Menu Navigasi</h4>
+        <ul>
+          <li><a href="#hero" class="active">Beranda</a></li>
+          <li><a href="#about">Tentang kami</a></li>
+          <li><a href="#features">Keunggulan</a></li>
+          <li><a href="#services">Alur Produksi</a></li>
+          <li><a href="#contact">kontak</a></li>
+        </ul>
+      </div>
+
+      <!-- Layanan -->
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Layanan Kami</h4>
+        <ul>
+          <li><a href="#">Produksi Benang DTY</a></li>
+          <li><a href="#">Praktik Industri</a></li>
+          <li><a href="#">Laboratorium & QC</a></li>
+          <li><a href="#">Riset & Kolaborasi</a></li>
+          <li><a href="#">Kunjungan Industri</a></li>
+        </ul>
+      </div>
+
+      <!-- Kosongkan / Tambahan -->
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Informasi Tambahan</h4>
+        <ul>
+          <li><a href="#">Galeri Kegiatan</a></li>
+          <li><a href="#">Berita Terbaru</a></li>
+          <li><a href="#">Kegiatan Mahasiswa</a></li>
+          <li><a href="#">SOP K3</a></li>
+          <li><a href="#">Peta Lokasi</a></li>
+        </ul>
+      </div>
+
+      <!-- Tambahan Link -->
+     
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="container copyright text-center mt-4">
+    <p>© <strong class="sitename">Unit DTY Politeknik Enjinering Indorama</strong>. All Rights Reserved</p>
+    
+  </div>
+
+</footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+  <script>
+  const questions = [
+    {
+      question: "Apa proses utama pada produksi DTY?",
+      options: [
+        "Memproses benang POY menjadi benang tekstur siap jual",
+        "Merajut benang menjadi kain",
+        "Mengecat benang tekstur",
+        "Menyortir benang menurut warna"
+      ],
+      answer: "Memproses benang POY menjadi benang tekstur siap jual"
+    },
+    {
+      question: "Mesin DTY yang digunakan berasal dari negara mana?",
+      options: [
+        "Jerman",
+        "Jepang",
+        "Korea Selatan",
+        "Amerika Serikat"
+      ],
+      answer: "Jepang"
+    },
+    {
+      question: "Berapa rata-rata output harian produksi DTY?",
+      options: [
+        "10 ton per hari",
+        "1 ton per hari",
+        "5 ton per hari",
+        "3 ton per hari"
+      ],
+      answer: "3 ton per hari"
+    },
+    {
+      question: "Apa manfaat mahasiswa belajar langsung di industri DTY?",
+      options: [
+        "Memahami proses produksi tekstil secara langsung",
+        "Hanya untuk melihat mesin",
+        "Tidak ada manfaat khusus",
+        "Belajar administrasi kantor"
+      ],
+      answer: "Memahami proses produksi tekstil secara langsung"
+    },
+    {
+      question: "Apa metode pengujian benang dalam quality control DTY?",
+      options: [
+        "Pengujian bau benang",
+        "Tes tarik manual",
+        "Proses knitting dan pewarnaan",
+        "Pengujian panas benang"
+      ],
+      answer: "Proses knitting dan pewarnaan"
+    }
+  ];
+
+  const startBtn = document.getElementById("startQuizBtn");
+  const overlay = document.getElementById("quizOverlay");
+  const questionText = document.getElementById("questionText");
+  const optionsList = document.getElementById("optionsList");
+  const nextBtn = document.getElementById("nextBtn");
+  const resultText = document.getElementById("resultText");
+  const closeBtn = document.getElementById("closeBtn");
+  const correctSound = document.getElementById("correctSound");
+  const wrongSound = document.getElementById("wrongSound");
+
+  let currentQuestionIndex = 0;
+  let score = 0;
+  let answered = false;
+
+  function showQuestion() {
+    answered = false;
+    nextBtn.style.display = "none";
+    resultText.textContent = "";
+    const q = questions[currentQuestionIndex];
+    questionText.textContent = q.question;
+    optionsList.innerHTML = "";
+
+    q.options.forEach(option => {
+      const li = document.createElement("li");
+      li.textContent = option;
+      li.tabIndex = 0;
+      li.addEventListener("click", () => selectAnswer(li, option));
+      li.addEventListener("keypress", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          selectAnswer(li, option);
+        }
+      });
+      optionsList.appendChild(li);
+    });
+  }
+
+  function selectAnswer(selectedLi, selectedOption) {
+    if (answered) return;
+    answered = true;
+    const correctAnswer = questions[currentQuestionIndex].answer;
+
+    Array.from(optionsList.children).forEach(li => {
+      li.style.pointerEvents = "none";
+    });
+
+    if (selectedOption === correctAnswer) {
+      selectedLi.classList.add("correct");
+      score++;
+      correctSound.play();
+      resultText.textContent = "Benar! 🎉";
+    } else {
+      selectedLi.classList.add("wrong");
+      wrongSound.play();
+      Array.from(optionsList.children).forEach(li => {
+        if (li.textContent === correctAnswer) {
+          li.classList.add("correct");
+        }
+      });
+      resultText.textContent = "Salah! 😞";
+    }
+    nextBtn.style.display = "inline-block";
+    nextBtn.focus();
+  }
+
+  function showResult() {
+    questionText.textContent = "Kuis selesai!";
+    optionsList.innerHTML = "";
+    nextBtn.style.display = "none";
+
+    let percentage = Math.round((score / questions.length) * 100);
+    let message = `Nilai kamu: ${score} dari ${questions.length} (${percentage}%)\n`;
+
+    if (percentage >= 80) {
+      message += "Kerja bagus! Kamu sangat menguasai materi DTY.";
+    } else if (percentage >= 50) {
+      message += "Lumayan! Tapi masih bisa lebih baik.";
+    } else {
+      message += "Perlu belajar lebih lagi ya.";
+    }
+
+    resultText.textContent = message;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      showResult();
+    }
+  });
+
+  startBtn.addEventListener("click", () => {
+    score = 0;
+    currentQuestionIndex = 0;
+    overlay.style.display = "flex";
+    showQuestion();
+    nextBtn.style.display = "none";
+    resultText.textContent = "";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+  });
+
+  overlay.addEventListener("click", (e) => {
+    if(e.target === overlay){
+      overlay.style.display = "none";
+    }
+  });
+</script>
+</body>
+
+</html>
